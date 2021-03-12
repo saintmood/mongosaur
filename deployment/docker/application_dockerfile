@@ -1,0 +1,10 @@
+FROM python:latest
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+ADD . /opt/mongosaur
+WORKDIR /opt/mongosaur
+RUN pip install --upgrade pip
+RUN pip install -r requirements/development.txt
+RUN pip install -r requirements/test.txt

@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  mongosaur:
+    build: 
+      context: .
+      dockerfile: ./deployment/docker/application_dockerfile
+    container_name: "mongosaur"
+    command: python main.py
+    volumes:
+      - ./:/opt/mongosaur
